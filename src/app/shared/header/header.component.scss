@@ -1,0 +1,29 @@
+.profile-img {
+    width: 150px;
+}
+
+.header {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110px;
+    background-color: #141d2f;
+}
+
+.header-content {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 37px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a {
+    color: white;
+    margin-right: 29px;
+    text-decoration: none;
+    font-size: 23px;
+}
