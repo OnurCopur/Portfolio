@@ -1,0 +1,33 @@
+<div class="projects">
+  <div class="headline-container">
+    <span>Portfolio</span>
+    <p>Discover a selection of my work - dive into projects and witness my skills in action.</p>
+  </div>
+
+  <div class="content">
+    <div
+      class="project-card"
+      *ngFor="let project of projects; let i = index"
+      [class.reverse]="i % 2 !== 0"
+      #projectCard>
+      <div class="project-image">
+        <img [src]="project.img" [alt]="project.title">
+        <div class="box">
+          <div class="box-border"></div>
+          <div class="box-arrow"></div>
+        </div>
+      </div>
+
+      <div class="project-details">
+        <h3>{{ project.title }}</h3>
+        <span>{{ project.languages }}</span>
+        <p>{{ project.description }}</p>
+
+        <div class="btn-container">
+          <a href="{{ project.githuburl }}" target="_blank"><button>GitHub</button></a>
+          <a href="{{ project.projecturl }}" target="_blank"><button>Test</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

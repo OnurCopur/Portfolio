@@ -1,0 +1,152 @@
+.skills-container {
+    height: 70vh;
+    width: 90%;
+    border: 5px solid black;
+    margin: auto;
+    position: relative; // Notwendig, um das absolute Positionieren des span-Elements zu ermöglichen
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 55px; // Platz für den span-Text oben
+    justify-content: center;
+
+
+    span {
+        position: absolute;
+        top: -55px; // Halbe Höhe des span-Elements (78px / 2) minus halbe Dicke des Rahmens (5px / 2)
+        left: 50%;
+        transform: translateX(-50%); // Um das Element horizontal zu zentrieren
+        font-family: 'Syne';
+        font-size: 78px;
+        font-weight: 800;
+        z-index: 10;
+        background-color: #FFFCF3;
+        padding-left: 20px;
+        padding-right: 20px;
+
+        &:hover {
+            color: #00BC8F;
+        }
+    }
+
+    .skills-list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap; // Ermöglicht den Umbruch in die nächste Zeile, wenn mehr als 5 Skills vorhanden sind
+        width: 100%;
+        padding: 0 5%; // Platz schaffen, damit die Skills nicht an den Rand gedrückt werden
+        box-sizing: border-box;
+    }
+
+    .skill-item {
+        text-align: center;
+        flex: 1 1 calc(20% - 50px); // 20% Breite minus Platz für Abstand, um 5 Skills in einer Reihe zu platzieren
+        max-width: calc(20% - 50px); // Maximale Breite beschränkt auf 20% minus Platz für Abstand
+        margin-bottom: 50px; // Abstand zwischen den Zeilen, wenn die Skills umgebrochen werden
+
+        img {
+            transition: transform 0.6s ease-in-out;
+        }
+
+        &:hover {
+            p {
+                color:#00BC8F
+            }
+
+            img {
+                animation: orbit 0.3s;
+            }
+        }
+    }
+
+    .learn {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        gap: 24px;
+    }
+
+    p {
+        font-size: 22px;
+    }
+}
+
+.arrowleft {
+    display: flex;
+    justify-content: start;
+    padding-left: 150px;
+    padding-bottom: 50px;
+
+    img {
+        cursor: pointer;
+        transform: scaleX(-1);
+    }
+}
+
+
+@keyframes orbit {
+    0% {
+      transform: translateX(0) scale(1);
+    }
+    12.5% {
+      transform: translateX(15px) scale(0.9);
+    }
+    25% {
+      transform: translateX(30px) scale(0.8);
+    }
+    37.5% {
+      transform: translateX(15px) scale(0.7);
+    }
+    50% {
+      transform: translateX(0) scale(0.6);
+    }
+    62.5% {
+      transform: translateX(-15px) scale(0.7);
+    }
+    75% {
+      transform: translateX(-30px) scale(0.8);
+    }
+    87.5% {
+      transform: translateX(-15px) scale(0.9);
+    }
+    100% {
+      transform: translateX(0) scale(1);
+    }
+  }
+
+  .learn {
+    position: relative;
+}
+
+.info-window {
+    display: none;
+    position: absolute;
+    top: -120px; /* Adjust to position above the image */
+    left: 0;
+    width: 200px;
+    height: 100px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    z-index: 10;
+}
+
+.info-window::after {
+    content: "";
+    position: absolute;
+    bottom: -10px; /* Position it just below the info window */
+    left: 20%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #f9f9f9; /* Same color as the info window background */
+}
+
+.learn-image:hover + .info-window {
+    display: block;
+}
