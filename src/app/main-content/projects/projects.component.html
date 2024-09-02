@@ -6,9 +6,8 @@
 
   <div class="content">
     <div
-      class="project-card"
+      class="project-card  {{ i % 2 == 1 ? 'reverse' : '' }}" [attr.data-index]="i"
       *ngFor="let project of projects; let i = index"
-      [class.reverse]="i % 2 !== 0"
       #projectCard>
       <div class="project-image">
         <img [src]="project.img" [alt]="project.title">

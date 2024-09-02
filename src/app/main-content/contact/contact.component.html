@@ -1,0 +1,86 @@
+<div class="color"></div>
+<div class="contact">
+    <div class="content">
+        <div class="headlines">    
+            <div>
+                <h1>Say Hi!</h1>
+            </div>
+            <div>
+                <h2>Want to discuss a new project?</h2>
+                <h3>Say hello! Let's discuss your ideas and make it happen</h3>
+            </div>
+        </div>
+
+        <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+            <div>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your name"
+                    ngModel
+                    required
+                    #name="ngModel"
+                    [ngClass]="{'invalid': name.invalid && (name.dirty || name.touched)}"
+                />
+                <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
+                    Name is required.
+                </div>
+            </div>
+        
+            <div>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Your email"
+                    ngModel
+                    required
+
+                    pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+                    #email="ngModel"
+                    [ngClass]="{'invalid': email.invalid && (email.dirty || email.touched)}"
+                />
+                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+                    Please enter a valid email address.
+                </div>
+            </div>
+        
+            <div>
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Your message"
+                    ngModel
+                    rows="5"
+                    required
+                    #message="ngModel"
+                    [ngClass]="{'invalid': message.invalid && (message.dirty || message.touched)}"
+                ></textarea>
+                <div *ngIf="message.invalid && (message.dirty || message.touched)" class="error">
+                    Message is required.
+                </div>
+            </div>
+        
+            <div>
+                <label for="subscribe">
+                    <input
+                        class="checkbox"
+                        type="checkbox"
+                        id="subscribe"
+                        name="subscribe"
+                        ngModel
+                        required
+                        #subscribe="ngModel"
+                    />
+                    I've read the <a href="imprint">privacy policy</a> and agree to the processing of my data as outlined
+                </label>
+                <div *ngIf="subscribe.invalid && (subscribe.dirty || subscribe.touched)" class="error">
+                    You must agree to the privacy policy.
+                </div>
+            </div>
+        
+            <button type="submit" [disabled]="!myForm.form.valid || !subscribe.value">Send message</button> <!-- Verwende subscribe.value -->
+        </form>
+    </div>
+</div>

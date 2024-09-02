@@ -76,6 +76,7 @@
     justify-content: start;
     padding-left: 150px;
     padding-bottom: 50px;
+    transform: scaleX(-1);
 
     img {
         cursor: pointer;
@@ -121,14 +122,14 @@
 .info-window {
     display: none;
     position: absolute;
-    top: -120px; /* Adjust to position above the image */
+    top: -130px; /* Adjust to position above the image */
     left: 0;
     width: 200px;
-    height: 100px;
-    background-color: #f9f9f9;
+    height: 120px;
+    background-color: white;
     border: 1px solid #ccc;
     border-radius: 24px;
-    padding: 10px;
+    padding: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     z-index: 10;
@@ -150,3 +151,27 @@
 .learn-image:hover + .info-window {
     display: block;
 }
+
+
+.interests {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 8px;
+
+  img {
+    width: 30px;
+  }
+
+  .interest {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    p {
+      font-size: 16px;
+    }
+  }
+}
+

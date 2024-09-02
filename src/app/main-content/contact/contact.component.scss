@@ -1,0 +1,169 @@
+.color {
+    height: 20vh;
+    background: black !important;
+    transform-origin: top left;
+    transform: skewY(5deg);
+    margin-top: 100px;
+}
+
+.contact {
+    background-color: black !important;
+    z-index: 5;
+    position: relative;
+
+    .content {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+.headlines {
+    color: white;
+    padding-bottom: 24px;
+
+    h1 {
+        font-family: Syne;
+        font-size: 78px;
+        font-weight: 800;
+        line-height: 78px;
+        letter-spacing: 0.01em;
+        padding-bottom: 48px;
+
+        &:hover {
+            color: #00BC8F;
+        }
+    }
+
+    h2 {
+        font-family: Overpass;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 38.4px;
+        text-align: center;
+        color: #00BC8F
+    }
+
+    h3 {
+        font-family: Overpass;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 26.4px;
+        text-align: center;
+    }
+}
+
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    gap: 16px;
+  
+    input,
+    textarea {
+      width: 617px;
+      background-color: black;
+      border: 2px solid black;
+      border-bottom: 2px solid white; /* Nur die untere Kante sichtbar */
+      color: white;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 10px;
+      transition: border-color 0.3s ease; /* Sanfter Übergang beim Hover */
+      resize: vertical;
+    }
+  
+    input::placeholder,
+    textarea::placeholder {
+      color: white;
+      opacity: 1; /* Stellt sicher, dass die Farbe nicht transparent ist */
+    }
+  
+    input:hover,
+    textarea:hover,
+    input:focus,
+    textarea:focus {
+      border-color: white; /* Zeige alle Kanten bei Hover oder Focus */
+      outline: none; /* Entferne den standardmäßigen Fokus-Rand */
+    }
+  
+    button {
+      padding: 20px 50px;
+      background-color: black;
+      color: #BBBBBB;
+      border: 4px solid #BBBBBB; /* Graue Border für den Button */
+      cursor: pointer;
+      transition: background-color 0.3s ease, border-color 0.3s ease, padding 0.3s ease;
+      margin-top: 10px;
+      border-radius: 4px; /* Optional: Abrunden der Ecken für einen besseren Look */
+      font-size: 22px;
+  
+    
+      // Stil für deaktivierten Button
+      &:disabled {
+          background-color: gray; /* Hintergrundfarbe für deaktiviert */
+          cursor: not-allowed; /* Zeigt ein Verbotssymbol als Cursor an */
+          transition: background-color 0.3s ease, border-color 0.3s ease; /* Beibehaltung der Übergänge ohne Padding und Schriftgewicht */
+      }
+
+      &:not(:disabled):hover {
+        padding: 20px 70px;
+        font-weight: 500;
+    }
+  }
+  
+      label {
+        color: white;
+        font-size: 16px;
+        margin-bottom: 10px; /* Abstand zum nächsten Element */
+        display: flex;
+        align-items: center;
+        line-height: 1.5; /* Zeilenhöhe für bessere Lesbarkeit */
+        display: flex;
+        justify-content: center;
+      }
+
+      label a {
+        color: #00BC8F;
+        text-decoration: none;
+        margin: 0 4px; /* Abstand links und rechts des Links */
+      }
+    
+      input[type="checkbox"] {
+        -webkit-appearance: none; /* Entfernt die Standard-Stile der Checkbox */
+        -moz-appearance: none;
+        appearance: none;
+        width: 20px; /* Größe der Checkbox */
+        height: 20px;
+        border: 2px solid white; /* Weiße Kanten */
+        background-color: black; /* Schwarzer Hintergrund */
+        cursor: pointer;
+        position: relative;
+        margin-right: 10px; /* Abstand zwischen Checkbox und Label-Text */
+        transition: background-color 0.3s ease, border-color 0.3s ease; /* Sanfter Übergang für Hintergrundfarbe und Border-Farbe */
+      }
+
+      input[type="checkbox"]:checked::before {
+        content: ''; /* Inhalt des „Häkchen“ */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        background-color: white; /* Weißes Häkchen */
+        transform: translate(-50%, -50%); /* Zentriert das Häkchen */
+      }
+  }
+
+  .invalid {
+    border: 1px solid red;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.875em;
+  }
+  

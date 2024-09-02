@@ -14,6 +14,10 @@ body {
   background-size: 100px 100px;
 }
 
+html {
+  scroll-padding-top: 150px; /* Höhe des Headers */
+}
+
 
  
 /* overpass-300 - latin */
@@ -113,3 +117,5 @@ body {
   font-weight: 800;
   src: url('assets/fonts/syne-v22-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
