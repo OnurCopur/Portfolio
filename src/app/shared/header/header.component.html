@@ -1,14 +1,47 @@
 <div class="header">
     <div class="header-content">
         <div class="logo">
-            <a  href="">
+            <a href="">
                 <img class="profile-img" src="./assets/img/profile.png" alt="">
             </a>
         </div>
-        <div class="header-links">
-            <a href="#about">About me</a>
-            <a href="#skills">Skills</a>
-            <a href="#portfolio">Portfolio</a>
+        <div class="links-container">
+            <div class="language-switcher">
+                <a href="#" class="active">EN</a> | <a href="#">DE</a>
+            </div>
+            <div class="menu-icon" (click)="toggleMenu()">
+                <span *ngIf="!menuOpen">&#9776;</span> <!-- Burger menu icon -->
+                <span *ngIf="menuOpen">&#x2716;</span> <!-- 'X' icon -->
+            </div>
         </div>
-    </div>    
+    </div>
 </div>
+
+<!-- Overlay for menu -->
+<div class="overlay" [class.open]="menuOpen">
+    <div class="overlay-content">
+        <a href="#about" (click)="navigateToSection('about')">About me</a>
+        <a href="#skills" (click)="navigateToSection('skills')">Skills</a>
+        <a href="#portfolio" (click)="navigateToSection('portfolio')">Portfolio</a>
+    </div>
+ 
+            <div class="say-hi">
+                <div class="container">
+                  <div>
+                    <h2>Say Hi</h2>
+                    <h4>onurcopur&#64;outlook.de</h4> 
+                  </div>
+                  <div class="links">
+                    <a href="https://github.com//" target="_blank">
+                      <img src="assets/img/githublogo.png" alt="GitHub" />
+                    </a>
+                    <a href="mailto:your-email@example.com" target="_blank">
+                      <img src="assets/img/maillogo.png" alt="E-Mail" />
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank">
+                      <img src="assets/img/linkedinlogo.png" alt="LinkedIn" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+    </div>

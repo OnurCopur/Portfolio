@@ -6,6 +6,8 @@
     height: 100vh;   
     padding-top: 8vh;
     width: 90%;
+    justify-content: center; /* Gilt für alle Viewports, daher kann es nach oben verschoben werden */
+    margin-bottom: 100px;
 }
 
 h1 {
@@ -15,7 +17,6 @@ h1 {
     font-weight: 800;
     padding-top: 104px;
 }
-
 
 .container {
     display: flex;
@@ -55,12 +56,9 @@ h1 {
         flex-direction: column;
         position: relative;
         overflow: hidden; 
-        text-align: center;
         font-size: 22px;
         height: 230px;
         justify-content: space-between;
-
-
 
         img {
             animation: scrollAnimation 1.2s linear infinite;           
@@ -84,4 +82,93 @@ h1 {
       opacity: 0;
       transform: translateY(0);
     }
-  }
+}
+
+/* Responsive styles */
+@media (max-width: 1150px) {
+    .landing-page {
+        margin-bottom: 0;
+    }
+
+    h1 {
+        font-size: 96px;
+    }
+
+    .container {
+        .horizontal-line {
+            width: 52%;
+        }
+
+        .name {
+            font-size: 36px;
+            width: 250px;
+        }
+    }
+}
+
+@media (max-width: 860px) {
+    h1 {
+        font-size: 72px;
+    }
+
+    .container .name {
+        font-size: 27px;
+    }
+}
+
+@media (max-width: 650px) {
+    .landing-page {
+        height: 80% !important;
+    }
+
+    h1 {
+        font-size: 58px;
+    }
+
+    .container .name {
+        font-size: 22px;
+        width: 150px;
+    }
+
+    img {
+        height: 70px;
+    }
+}
+
+@media (max-width: 540px) {
+    h1 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 470px) {
+    h1 {
+        font-size: 45px;
+    }
+
+    .mail-scroll {
+        .mail {
+            font-size: 18px;
+        }
+
+        .scroll {
+            height: 200px;
+
+            p {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    h1 {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 370px) {
+    h1 {
+        font-size: 34px;
+    }
+}

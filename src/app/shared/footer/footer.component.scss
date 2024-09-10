@@ -34,8 +34,6 @@
 .links-ln {
     display: flex;
     flex-direction: column;
-    //width: 90%;
-    //margin: auto;
 }
 
 .links {
@@ -65,4 +63,55 @@
 .imprint {
     text-decoration: none;
     color: white;
+}
+
+/* Media query to adjust span font-size and link gap for small screens */
+@media (max-width: 500px) {
+    .footer span {
+        font-size: 18px;
+    }
+    
+    .links {
+        gap: 10px;
+    }
+}
+
+/* Media query for max-width: 400px to stack elements vertically */
+@media (max-width: 400px) {
+    .footer {
+        flex-direction: column;
+        height: auto;
+        padding-top: 16px;
+    }
+
+    .logo-links {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .links-ln {
+        order: 1; /* First the links */
+        flex-direction: column; /* Stack the links vertically */
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo-name {
+        //order: 2; /* Then the logo */
+        align-items: center;
+    }
+
+    .links a[href^="mailto"] {
+        order: 3; /* Then the email address */
+        display: block;
+        text-align: center;
+    }
+
+    .imprint {
+        order: 4; /* Lastly, the Legal notice */
+        text-align: center;
+        display: block;
+    }
 }

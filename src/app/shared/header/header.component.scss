@@ -1,3 +1,4 @@
+/* Header styles */
 .header {
     position: fixed;
     z-index: 9999;
@@ -8,33 +9,289 @@
     height: 110px;
     box-sizing: border-box;
     background-color: #FFFCF3;
-
+  
     .header-content {
-        max-width: 1920px;
-        margin: 0 auto;
-        padding: 37px 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 90%;
+      max-width: 1920px;
+      margin: 0 auto;
+      padding: 37px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
     }
-
+  
     .profile-img {
-        width: 150px;
+      width: 150px;
     }
-
-    a {
-        color: #000000;
-        margin-left: 29px;
-        text-decoration: none;
-        font-size: 23px;
-    }
-
-    .logo {
+  
+    .links-container {
+      display: flex;
+      align-items: center;
+  
+      .language-switcher {
+        margin-left: 20px;
+        margin-right: 20px;
+  
         a {
-            margin-left: 0;
+          color: #000000;
+          margin: 0 5px;
+          text-decoration: none;
+          font-size: 23px;
+  
+          &:hover {
+            text-decoration: none;
+          }
+  
+          &.active {
+            color: #00BC8F;
+          }
         }
+      }
+  
+      .menu-icon {
+        font-size: 40px; /* Increase the size of the icons */
+        cursor: pointer;
+        display: block;
+        user-select: none; /* Prevent text selection on click */
+        transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+  
+        &:hover {
+          transform: scale(1.05);
+          transition: ease-in-out 300ms;
+        }
+      }
+  
+      .menu-icon span {
+        display: block;
+        transform-origin: center;
+        transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
+      }
+  
+      .menu-icon .close-icon {
+        transform: rotate(0deg); /* Default no rotation for the X icon */
+      }
+  
+      .menu-icon .burger-icon {
+        transform: rotate(0deg); /* Default no rotation for the burger icon */
+      }
+  
+      .menu-icon .close-icon,
+      .menu-icon .burger-icon {
+        display: none;
+      }
+  
+      .menu-icon span {
+        font-size: 50px;
+      }
+  
+      /* When the menu is open, show the close icon and hide the burger icon */
+      .menu-icon.open .close-icon {
+        display: block;
+        transform: rotate(90deg); /* Rotate the X icon when menu is open */
+      }
+  
+      .menu-icon.open .burger-icon {
+        display: none;
+      }
+  
+      /* When the menu is closed, show the burger icon and hide the close icon */
+      .menu-icon:not(.open) .burger-icon {
+        display: block;
+      }
+  
+      .menu-icon:not(.open) .close-icon {
+        display: none;
+      }
     }
-}
+  }
+  
+  /* Overlay styles */
+  .overlay {
+    position: fixed;
+    top: 110px; /* Just below the header */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 110px); /* Full screen height minus header */
+    background-color: #FFFCF3;
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: all 0.3s ease-in-out;
+  
+    &.open {
+      display: flex; /* Show when menuOpen is true */
+    }
+  }
+  
+  .overlay-content {
+    display: flex;
+    flex-direction: column;
+  
+    a {
+      position: relative;  /* Referenzpunkt für Pseudo-Elemente */
+      color: black;
+      margin: 20px 0;
+      text-decoration: none;
+      font-size: 80px;
+      font-family: 'Syne';
+      font-weight: 700;
+  
+      /* Vertikaler Strich */
+      &::before {
+        content: '';  /* Inhalt des Pseudo-Elements */
+        position: absolute;
+        bottom: 0;  /* Position am unteren Rand des Links */
+        left: -10%;  /* Leicht nach links versetzt */
+        width: 5px;  /* Breite des vertikalen Strichs */
+        height: 20px;  /* Höhe des vertikalen Strichs */
+        background-color: black;  /* Farbe des Strichs */
+        transition: opacity 0.3s ease, left 0.3s ease;  /* Übergangseffekte */
+        opacity: 1;  /* Sichtbar im Normalzustand */
+      }
+  
+      /* Unterstrich */
+      &::after {
+        content: '';  /* Inhalt des Pseudo-Elements */
+        position: absolute;
+        bottom: 0;  /* Position am unteren Rand des Links */
+        left: -10%;  /* Anfangs leicht nach links versetzt */
+        width: 20%;  /* Anfangsbreite des Unterstrichs */
+        height: 5px;  /* Höhe des Unterstrichs */
+        background-color: black;  /* Farbe des Unterstrichs */
+        transition: width 0.3s ease, left 0.3s ease;  /* Übergangseffekte */
+      }
+  
+      /* Hover-Zustand */
+      &:hover {
+        &::before {
+          opacity: 0;  /* Vertikaler Strich wird unsichtbar */
+          left: 0;      /* Optional: Verschiebe den Strich zur neuen Position */
+        }
+  
+        &::after {
+          width: 50%;  /* Unterstrich erweitert sich auf volle Breite */
+          left: 50%;      /* Unterstrich verschiebt sich unter den Link */
+        }
+      }
+    }
+  }
+  
+  
+  
+  
+  
+  .say-hi {
+    color: white;
+    background: black;
+    transform: skewY(+5deg);
+    transform-origin: top left;
+    height: 100%;
+    width: 100%;
+  
+    > div {
+      transform: skewY(-5deg);
+      transform-origin: top left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: auto;
+      max-width: 1920px;
+      height: 100%;
+      width: 90%;
+    }
+  }
+  
+  h4,
+  h2 {
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+  
+  h4:hover,
+  h2:hover {
+    color: #00BC8F;
+  }
+  
+  h2 {
+    font-family: Syne;
+    font-size: 78px;
+    font-weight: 800;
+    line-height: 45px;
+    letter-spacing: 0.01em;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  
+  .links {
+    > a {
+      > img {
+        height: 48px;
+        transition: transform 0.3s ease-in-out;
+      }
+    }
+  }
+  
+  .links {
+    > a {
+      > img:hover {
+        transform: translateY(-10px);
+      }
+    }
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 500px) {
+    .header {
+      .header-content {
+        padding: 20px 0;
+        width: 90%;
+      }
+  
+      .profile-img {
+        width: 100px; /* Reduce logo size */
+      }
+  
+      .links-container {
+        .language-switcher {
+          margin-left: 10px;
+          margin-right: 10px;
+  
+          a {
+            font-size: 18px; /* Reduce font size of language switcher links */
+          }
+        }
+  
+        .menu-icon {
+          font-size: 30px; /* Reduce menu icon size */
+        }
+      }
+    }
+  
+    .overlay {
+      height: 100%; /* Adjust height if necessary */
+    }
+  
+    .overlay-content {
+      height: 100% !important;
+      justify-content: center;
+      a {
+        font-size: 50px; /* Reduce font size in overlay */
+      }
+    }
+  
+    .say-hi {
+      h2 {
+        font-size: 60px; /* Reduce font size of h2 in say-hi section */
+      }
 
-
+      .container {
+        .links {
+            display: flex;
+            flex-direction: column;
+        }
+      }
+    }
+  }
+  

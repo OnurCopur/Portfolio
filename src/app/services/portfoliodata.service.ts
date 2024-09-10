@@ -28,8 +28,8 @@ export class PortfolioDataService {
       title: 'Join',
       description: 'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
       languages: 'JavaScript | HTML | CSS | Firebase',
-      projecturl: 'https://google.de/',
-      githuburl: 'https://transfermarkt.de'
+      projecturl: '',
+      githuburl: 'https://github.com/OnurCopur/Join'
     },
     {
       id: 1,
@@ -38,7 +38,7 @@ export class PortfolioDataService {
       description: 'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen',
       languages: 'JavaScript | HTML | CSS',
       projecturl: '',
-      githuburl: '',
+      githuburl: 'https://github.com/OnurCopur/El-Pollo-Loco',
     },
 
     {
@@ -50,8 +50,5 @@ export class PortfolioDataService {
       projecturl: '',
       githuburl: '',
     }
-
-    
-  
   ];
 }

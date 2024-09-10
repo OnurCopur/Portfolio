@@ -11,14 +11,14 @@
             </div>
         </div>
 
-        <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
             <div>
                 <input
                     type="text"
                     id="name"
                     name="name"
                     placeholder="Your name"
-                    ngModel
+                    [(ngModel)]="contactData.name"
                     required
                     #name="ngModel"
                     [ngClass]="{'invalid': name.invalid && (name.dirty || name.touched)}"
@@ -34,9 +34,8 @@
                     id="email"
                     name="email"
                     placeholder="Your email"
-                    ngModel
+                    [(ngModel)]="contactData.email"
                     required
-
                     pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                     #email="ngModel"
                     [ngClass]="{'invalid': email.invalid && (email.dirty || email.touched)}"
@@ -51,7 +50,7 @@
                     id="message"
                     name="message"
                     placeholder="Your message"
-                    ngModel
+                    [(ngModel)]="contactData.message"
                     rows="5"
                     required
                     #message="ngModel"
@@ -73,14 +72,22 @@
                         required
                         #subscribe="ngModel"
                     />
-                    I've read the <a href="imprint">privacy policy</a> and agree to the processing of my data as outlined
+                    <span>I've read the <a href="imprint">privacy policy</a> and agree to the processing of my data as outlined</span>
                 </label>
                 <div *ngIf="subscribe.invalid && (subscribe.dirty || subscribe.touched)" class="error">
                     You must agree to the privacy policy.
                 </div>
             </div>
         
-            <button type="submit" [disabled]="!myForm.form.valid || !subscribe.value">Send message</button> <!-- Verwende subscribe.value -->
+            <button
+                type="submit"
+                [disabled]="!contactForm.form.valid || !subscribe.value"
+                class="submit-btn"
+                >
+                <span class="desktop-text">Send message</span>
+                <span class="mobile-text">Say hello :)</span>
+            </button>
+
         </form>
     </div>
 </div>

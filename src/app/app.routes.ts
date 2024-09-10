@@ -6,4 +6,5 @@ import { ImprintComponent } from './main-content/imprint/imprint.component';
 export const routes: Routes = [
     { path: '', component: MainContentComponent },
     { path: 'imprint', component: ImprintComponent },
+    
 ];

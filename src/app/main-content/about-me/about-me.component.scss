@@ -1,112 +1,256 @@
-.text-img {
-    display: flex;
-    justify-content: space-between;
-    position: relative; /* Ermöglicht die Positionierung der box innerhalb von .text-img */
-  
-    .text {
-      width: 60%;
-      font-size: 22px;
-  
-      span {
-        display: block;
-        width: 70%;
-      }
-    }
-  
-    .img {
-      width: 40%;
-      position: relative; /* Ermöglicht die Positionierung der .box relativ zu .img */
-  
-      img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-  
-      .box {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0; /* Startet als unsichtbar */
-        transform: translate(-20px, -20px); /* Verschiebung nach oben links */
-  
-        .box-border {
-          position: absolute;
-          border: 4px solid black;
-          height: 100%;
-          width: 100%;
-          box-sizing: border-box;
-        }
-      }
-  
-      &:hover .box {
-        opacity: 1; /* Sichtbar beim Hover */
-      }
-    }
-  
-    .house {
-      display: flex;
-      align-items: center;
-      padding-top: 48px;
-      gap: 16px;
-    }
-  
-    .remote {
-      display: flex;
-      align-items: center;
-      padding-top: 24px;
-      gap: 16px;
-    }
-  
-    .button-container {
-      display: flex;
-      justify-content: center;
-    }
-  
-    .button {
-      border: 4px solid black;
-      width: 213px;
-      height: 68px;
-      align-items: center;
-      display: flex;
-      justify-content: center;
-      margin-top: 80px;
-      cursor: pointer;
-      transition: width 100ms ease-out; /* Animiert die Breite */
-  
-      &:hover {
-        font-weight: bold;
-        width: 250px;
-      }
-    }
-  }
-  
-  .about-me {
-    width: 90%;
-    margin: auto;
-  }
-  
+.about-me {
+  width: 90%;
+  margin: auto;
+
   .headline-container {
-    padding-bottom: 48px;
-  
-    span {
-      font-family: 'Syne';
-      font-size: 78px;
-      font-weight: 800;
-  
-      &:hover {
-        color: #00BC8F;
-      } 
-    }
+      padding-bottom: 48px;
+
+      span {
+          font-family: 'Syne';
+          font-size: 78px;
+          font-weight: 800;
+
+          &:hover {
+              color: #00BC8F;
+          }
+      }
+  }
+
+  .text-img {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      flex-wrap: wrap;
+
+      .text {
+          width: 60%;
+          font-size: 22px;
+
+          span {
+              display: block;
+              width: 70%;
+          }
+
+          .house,
+          .remote {
+              display: flex;
+              align-items: center;
+              gap: 16px;
+          }
+
+          .house {
+              padding-top: 48px;
+          }
+
+          .remote {
+              padding-top: 24px;
+          }
+
+          .button-container {
+              display: flex;
+              justify-content: center;
+
+              .button {
+                  border: 4px solid black;
+                  width: 213px;
+                  height: 68px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-top: 80px;
+                  cursor: pointer;
+                  transition: width 100ms ease-out;
+
+                  &:hover {
+                      font-weight: bold;
+                      width: 250px;
+                  }
+              }
+          }
+      }
+
+      .img {
+          width: 40%;
+          height: 100%;
+          position: relative;
+
+          img {
+              width: 100%;
+              height: auto;
+              display: block;
+          }
+
+          .box {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              opacity: 0;
+              transform: translate(-20px, -20px);
+
+              .box-border {
+                  position: absolute;
+                  border: 4px solid black;
+                  height: 100%;
+                  width: 100%;
+                  box-sizing: border-box;
+              }
+          }
+
+          &:hover .box {
+              opacity: 1;
+          }
+      }
   }
 
   .arrowleft {
-    img {
-      transform: scaleX(-1);
-    }
+    padding-bottom: 40px;
+      img {
+          transform: scaleX(-1);
+      }
   }
+}
+
+/* Responsive Styles */
+@media (max-width: 1228px) {
+  .text-img {
+      .text {
+          width: 55%;
+          font-size: 20px;
+
+          span {
+              width: 80% !important;
+          }
+      }
+
+      .img {
+          width: 45%;
+      }
+  }
+}
+
+@media (max-width: 1000px) {
+  .headline-container span {
+      font-size: 60px !important;
+  }
+
+  .text-img {
+      .text {
+          width: 50%;
+          font-size: 18px;
+
+          span {
+            display: block;
+              width: 100% !important;
+          }
+      }
+
+      .img {
+          width: 50%;
+      }
+  }
+}
+
+@media (max-width: 750px) {
+  .text-img {
+      flex-direction: column;
+      align-items: center;
+
+      .text, .img {
+          width: 100% !important;
+          text-align: left;
+      }
+
+      .text {
+          span {
+              width: 100%;
+          }
+      }
+
+      .img {
+          margin-top: 24px;
+
+          .box {
+            display: none !important;
+          }
+      }
+
+      .button-container {
+          margin-top: 0;
+      }
+  }
+}
+
+@media (max-width: 540px) {
+  .headline-container span {
+      font-size: 50px !important;
+  }
+
+  .text-img {
+      .text {
+          font-size: 16px;
+      }
+
+      .house, .remote {
+          padding-top: 16px;
+      }
+
+      .button {
+          width: 180px;
+          height: 60px;
+          margin-top: 40px !important;
+          width: 150px !important;
+          height: 52px !important;
+
+          &:hover {
+              width: 180px !important;
+          }
+      }
+  }
+}
+
+@media (max-width: 420px) {
+  .headline-container span {
+      font-size: 40px !important;
+  }
+
+  .text-img {
+      .text {
+          font-size: 18px !important;
+      }
+
+      .button {
+          width: 160px;
+          height: 50px;
+
+          &:hover {
+              width: 180px;
+          }
+      }
+  }
+}
+
+@media (max-width: 320px) {
+  .headline-container span {
+      font-size: 32px !important;
+  }
+
+  .text-img {
+      .house, .remote {
+          gap: 8px;
+      }
+
+      .button {
+          width: 140px;
+          height: 45px;
+
+          &:hover {
+              width: 160px;
+          }
+      }
+  }
+}
