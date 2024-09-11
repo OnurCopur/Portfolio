@@ -1,9 +1,21 @@
 {
-  "HEADER": {
-    "ABOUT_ME": "About Me",
-    "SKILLS": "Skills",
-    "PORTFOLIO": "Portfolio",
-    "SAY_HI": "Say Hi",
-    "EMAIL": "onurcopur@outlook.de"
+  "landing-page": {
+    "title": "Frontend Entwickler",
+    "name": "Onur Copur",
+    "scroll": "Scroll runter"
+  },
+  "about-me": {
+    "headline": "Über mich",
+    "text": "Ich bin ein Frontend-Entwickler aus München, Deutschland. Ich helfe Designern und Unternehmen, ihre Ideen in die Realität umzusetzen. Kreativität und logisches Denken sind Fähigkeiten, die ich entwickelt habe, um Ideen in Qualitätsprodukte zu verwandeln. <br><br> Wenn Sie denken, dass ich gut zu Ihren Projekten passen würde, kontaktieren Sie mich!",
+    "based-in": "Ansässig in München",
+    "remote-work": "Offen für Remote- und Vor-Ort-Arbeit",
+    "button": "Lass uns reden"
+  },
+  "skills": {
+    "title": "Meine Skills",
+    "special-interest": "Ich habe Interesse daran meine Skills zu erweitern",
+    "let-me-know": "Falls etwas fehlt,",
+     "let-me-know-link": "lass es mich wissen",
+    "let-me-know-description": "Ich bin immer offen, meine Skills zu erweitern!"
   }
 }

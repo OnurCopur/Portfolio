@@ -1,9 +1,23 @@
 {
-  "HEADER": {
-    "ABOUT_ME": "Über mich",
-    "SKILLS": "Fähigkeiten",
-    "PORTFOLIO": "Portfolio",
-    "SAY_HI": "Hallo sagen",
-    "EMAIL": "onurcopur@outlook.de"
+  "landing-page": {
+    "title": "Frontend Developer",
+    "name": "Onur Copur",
+    "scroll": "Scroll Down"
+  },
+
+  "about-me": {
+    "headline": "About me",
+    "text": "I am a Front-end developer from Munich, Germany. I help designers and companies to bring their ideas to real life. Creativity and logical thinking are skills that I have developed to connect ideas into quality products. <br><br> If you think I’d be a good match for your projects, contact me!",
+    "based-in": "Based in Munich",
+    "remote-work": "Open to work Remote and On-Site",
+    "button": "Let's talk"
+  },
+
+  "skills": {
+    "title": "My skills",
+    "special-interest": "I have a special interest in learning",
+    "let-me-know": "If there's something missing,",
+    "let-me-know-link": "let me know",
+    "let-me-know-description": "I'm always open to expanding my skills!"
   }
 }

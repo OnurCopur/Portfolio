@@ -1,15 +1,15 @@
 <div class="skills-container">
-    <span>My skills</span>
+    <span>{{ title }}</span>
     <div class="skills-list">
         <div class="skill-item" *ngFor="let skill of skills">
             <img [src]="skill.icon">
-            <p>{{skill.name}}</p>
+            <p>{{ skill.name }}</p>
         </div>
     </div>
     <div class="learn">
         <img src="assets/img/learn.svg" alt="Learn more" class="learn-image">
         <div class="info-window">
-            I have special interesting in learning
+            {{ specialInterest }}
             <div class="interests">
                 <div class="interest">
                     <img src="assets/img/python.png">
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        <p>If there's something missing, <a href="#contact">let me know</a> — I'm always open to expanding my skills!</p>
+        <p>{{ letMeKnow }} <a href="#contact">{{ letMeKnowLink }}</a> — {{ letMeKnowDescription }}</p>
     </div>
 </div>
 <div class="arrowleft">

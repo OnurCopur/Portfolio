@@ -1,5 +1,6 @@
 import { Component, Renderer2, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslationService } from '../../services/translation.service';
 
 @Component({
   selector: 'app-header',
@@ -10,8 +11,13 @@ import { CommonModule } from '@angular/common';
 })
 export class HeaderComponent {
   menuOpen = false;
+  activeLanguage = 'EN';  // Speichert die aktuell aktive Sprache
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {}
+  constructor(
+    private renderer: Renderer2, 
+    private el: ElementRef, 
+    private translationService: TranslationService
+  ) {}
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
@@ -41,5 +47,11 @@ export class HeaderComponent {
       this.renderer.addClass(button, 'not-active');
     }
     document.body.style.overflow = ''; // Re-enable scrolling
+  }
+
+  switchLanguage(language: string, event: Event) {
+    event.preventDefault(); // Verhindert das Springen nach oben
+    this.activeLanguage = language;
+    this.translationService.switchLanguage(language);  // Sprachwechsel ausführen
   }
 }

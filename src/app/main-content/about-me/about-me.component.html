@@ -1,26 +1,20 @@
 <div class="about-me">
   <div class="headline-container">
-    <span class="headline">About me</span>
+    <span class="headline">{{ headline }}</span>
   </div>
   <div class="text-img">
     <div class="text">
-      <span>
-        I am a Front-end deverloper from Munich, Germany. I help designers and
-        companies to bring their ideas to real life. Creativity and logical
-        thinking are skills that I have developed to connect ideas into quality
-        products. <br><br> If you think I’d be a good match for your projects, contact
-        me!
-      </span>
+      <span [innerHTML]="text"></span>
       <div class="house">
         <img src="assets/img/house.png">
-        <span>Based in Munich</span>
+        <span>{{ basedIn }}</span>
       </div>
       <div class="remote">
         <img src="assets/img/laptop.png">
-        <span>Open to work Remote and On-Site</span>
+        <span>{{ remoteWork }}</span>
       </div>
       <div class="button-container">
-        <div class="button">Let's talk</div>
+        <div class="button">{{ button }}</div>
       </div>
     </div>
     <div class="img">
