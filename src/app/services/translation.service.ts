@@ -13,12 +13,17 @@ export class TranslationService {
 
   constructor(private http: HttpClient) {
     // Standardmäßig Englisch laden
-    this.switchLanguage('EN');  // Stelle sicher, dass die englische Sprache beim Start geladen wird
+    this.switchLanguage('EN');
   }
 
   // Funktion zum Laden der Sprachdateien
   loadTranslations(lang: string): Observable<any> {
     return this.http.get(`assets/i18n/${lang.toLowerCase()}.json`);
+  }
+
+  // Funktion zum Laden der Imprint HTML-Datei
+  loadImprintHtml(lang: string): Observable<string> {
+    return this.http.get(`assets/i18n/imprint.component.${lang.toLowerCase()}.html`, { responseType: 'text' });
   }
 
   // Funktion zum Umschalten der Sprache

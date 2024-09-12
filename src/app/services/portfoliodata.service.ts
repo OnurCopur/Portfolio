@@ -48,7 +48,7 @@ export class PortfolioDataService {
       description: 'Based on the PokéAPI a simple library that provides and catalogues pokemon information.',
       languages: 'JavaScript | HTML | CSS | API',
       projecturl: '',
-      githuburl: '',
+      githuburl: 'https://github.com/OnurCopur/Pokedex',
     }
   ];
 }

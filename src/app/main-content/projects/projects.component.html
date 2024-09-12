@@ -1,7 +1,7 @@
 <div class="projects">
   <div class="headline-container">
     <span>Portfolio</span>
-    <p>Discover a selection of my work - dive into projects and witness my skills in action.</p>
+    <p>{{ headlineDescription }}</p> <!-- Dynamisch übersetzter Text -->
   </div>
 
   <div class="content">
@@ -20,8 +20,7 @@
       <div class="project-details">
         <h3>{{ project.title }}</h3>
         <span>{{ project.languages }}</span>
-        <p>{{ project.description }}</p>
-
+        <p>{{ project.description }}</p> <!-- Dynamisch übersetzte Beschreibung -->
         <div class="btn-container">
           <a href="{{ project.githuburl }}" target="_blank"><button>GitHub</button></a>
           <a href="{{ project.projecturl }}" target="_blank"><button>Test</button></a>

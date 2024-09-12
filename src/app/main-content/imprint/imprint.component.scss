@@ -1,6 +1,5 @@
 
 .main {    
-    //background-color: $primary-color;
     position: relative; 
     min-height: 100vh;   
     width: 90%;
@@ -8,7 +7,6 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    //@include flexParams(flex-start,flex-start);
     flex-direction: column;     
     padding-top: 150px;  
     padding-bottom: 32px;
@@ -18,7 +16,6 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    //@include flexParams(flex-start, flex-start);
     flex-direction: column;
     padding: 110px 100px; 
     flex-grow: 1;    

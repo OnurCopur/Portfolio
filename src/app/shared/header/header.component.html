@@ -1,53 +1,54 @@
 <div class="header">
-  <div class="header-content">
-      <div class="logo">
-          <a href="">
-              <img class="profile-img" src="./assets/img/profile.png" alt="">
-          </a>
-      </div>
-      <div class="links-container">
-          <div class="language-switcher">
-            <a href="#" 
-            [class.active]="activeLanguage === 'EN'" 
-            (click)="switchLanguage('EN', $event)">EN</a> | 
-         <a href="#" 
-            [class.active]="activeLanguage === 'DE'" 
-            (click)="switchLanguage('DE', $event)">DE</a>
-         
-          </div>
-          <div class="menu-icon" (click)="toggleMenu()">
-              <span *ngIf="!menuOpen">&#9776;</span> <!-- Burger menu icon -->
-              <span *ngIf="menuOpen">&#x2716;</span> <!-- 'X' icon -->
-          </div>
-      </div>
+    <div class="header-content">
+        <div class="logo">
+            <a href="">
+                <img class="profile-img" src="./assets/img/profile.png" alt="">
+            </a>
+        </div>
+        <div class="links-container">
+            <div class="language-switcher">
+              <a href="#" 
+              [class.active]="activeLanguage === 'EN'" 
+              (click)="switchLanguage('EN', $event)">EN</a> | 
+           <a href="#" 
+              [class.active]="activeLanguage === 'DE'" 
+              (click)="switchLanguage('DE', $event)">DE</a>
+           
+            </div>
+            <div class="menu-icon" (click)="toggleMenu()">
+                <span *ngIf="!menuOpen">&#9776;</span> <!-- Burger menu icon -->
+                <span *ngIf="menuOpen">&#x2716;</span> <!-- 'X' icon -->
+            </div>
+        </div>
+    </div>
   </div>
-</div>
-
-<!-- Overlay for menu -->
-<div class="overlay" [class.open]="menuOpen">
-  <div class="overlay-content">
-      <a href="#about" (click)="navigateToSection('about')">About me</a>
-      <a href="#skills" (click)="navigateToSection('skills')">Skills</a>
-      <a href="#portfolio" (click)="navigateToSection('portfolio')">Portfolio</a>
+  
+  <!-- Overlay for menu -->
+  <div class="overlay" [class.open]="menuOpen">
+    <div class="overlay-content">
+        <a href="#about" (click)="navigateToSection('about')">{{ getTranslation(translationKeys.aboutMe) }}</a>
+        <a href="#skills" (click)="navigateToSection('skills')">{{ getTranslation(translationKeys.skills) }}</a>
+        <a href="#portfolio" (click)="navigateToSection('portfolio')">{{ getTranslation(translationKeys.portfolio) }}</a>
+    </div>
+  
+    <div class="say-hi">
+        <div class="container">
+            <div>
+                <h2>{{ getTranslation(translationKeys.sayHi) }}</h2>
+                <h4>{{ getTranslation(translationKeys.email) }}</h4> 
+            </div>
+            <div class="links">
+                <a href="https://github.com//" target="_blank">
+                    <img src="assets/img/githublogo.png" alt="GitHub" />
+                </a>
+                <a href="mailto:your-email@example.com" target="_blank">
+                    <img src="assets/img/maillogo.png" alt="E-Mail" />
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank">
+                    <img src="assets/img/linkedinlogo.png" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+    </div>
   </div>
-
-  <div class="say-hi">
-      <div class="container">
-          <div>
-              <h2>Say Hi</h2>
-              <h4>onurcopur&#64;outlook.de</h4> 
-          </div>
-          <div class="links">
-              <a href="https://github.com//" target="_blank">
-                  <img src="assets/img/githublogo.png" alt="GitHub" />
-              </a>
-              <a href="mailto:your-email@example.com" target="_blank">
-                  <img src="assets/img/maillogo.png" alt="E-Mail" />
-              </a>
-              <a href="https://www.linkedin.com/" target="_blank">
-                  <img src="assets/img/linkedinlogo.png" alt="LinkedIn" />
-              </a>
-          </div>
-      </div>
-  </div>
-</div>
+  

@@ -1,4 +1,11 @@
 {
+  "overlay": {
+    "aboutMe": "About me",
+    "skills": "Skills",
+    "portfolio": "Portfolio",
+    "sayHi": "Say Hi",
+    "email": "onurcopur@outlook.de"
+  },
   "landing-page": {
     "title": "Frontend Developer",
     "name": "Onur Copur",
@@ -19,5 +26,33 @@
     "let-me-know": "If there's something missing,",
     "let-me-know-link": "let me know",
     "let-me-know-description": "I'm always open to expanding my skills!"
+  },
+  "projects": {
+    "headlineDescription": "Discover a selection of my work - dive into projects and witness my skills in action.",
+    "project0": {
+      "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+    },
+    "project1": {
+      "description": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen."
+    },
+    "project2": {
+      "description": "Based on the PokéAPI a simple library that provides and catalogues pokemon information."
+    }
+  },
+   "contact": {
+    "sayHi": "Say Hi!",
+    "discussProject": "Want to discuss a new project?",
+    "letsDiscuss": "Say hello! Let's discuss your ideas and make it happen",
+    "placeholderName": "Your name",
+    "placeholderEmail": "Your email",
+    "placeholderMessage": "Your message",
+    "privacyTextBeforeLink": "I've read the ",
+    "privacyLinkText": "privacy policy",
+    "privacyTextAfterLink": " and agree to the processing of my data as outlined",
+    "sendMessage": "Send message",
+    "mobileText": "Say hello :)"
+  },
+  "footer": {
+    "imprint": "Legal notice"
   }
 }

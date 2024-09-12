@@ -1,4 +1,11 @@
 {
+  "overlay": {
+    "aboutMe": "Über mich",
+    "skills": "Skills",
+    "portfolio": "Portfolio",
+    "sayHi": "Sag Hallo",
+    "email": "onurcopur@outlook.de"
+  },
   "landing-page": {
     "title": "Frontend Entwickler",
     "name": "Onur Copur",
@@ -7,9 +14,9 @@
   "about-me": {
     "headline": "Über mich",
     "text": "Ich bin ein Frontend-Entwickler aus München, Deutschland. Ich helfe Designern und Unternehmen, ihre Ideen in die Realität umzusetzen. Kreativität und logisches Denken sind Fähigkeiten, die ich entwickelt habe, um Ideen in Qualitätsprodukte zu verwandeln. <br><br> Wenn Sie denken, dass ich gut zu Ihren Projekten passen würde, kontaktieren Sie mich!",
-    "based-in": "Ansässig in München",
+    "based-in": "Based in München",
     "remote-work": "Offen für Remote- und Vor-Ort-Arbeit",
-    "button": "Lass uns reden"
+    "button": "Let's talk"
   },
   "skills": {
     "title": "Meine Skills",
@@ -17,5 +24,34 @@
     "let-me-know": "Falls etwas fehlt,",
      "let-me-know-link": "lass es mich wissen",
     "let-me-know-description": "Ich bin immer offen, meine Skills zu erweitern!"
+  },
+  "projects": {
+    "headlineDescription": "Entdecke eine Auswahl meiner Arbeiten - tauche in Projekte ein und erlebe meine Fähigkeiten in Aktion.",
+    "project0": {
+      "description": "Aufgabenmanager inspiriert vom Kanban-System. Erstelle und organisiere Aufgaben mit Drag-and-Drop-Funktionen, weise Benutzer und Kategorien zu."
+    },
+    "project1": {
+      "description": "Jump'n'Run-Spiel basierend auf einem objektorientierten Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen."
+    },
+    "project2": {
+      "description": "Basierend auf der PokéAPI, eine einfache Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert."
+    }
+  },
+  "contact": {
+    "sayHi": "Hi!",
+    "discussProject": "Möchtest du ein neues Projekt besprechen?",
+    "letsDiscuss": "Lass uns deine Ideen besprechen und sie umsetzen.",
+    "placeholderName": "Dein Name",
+    "placeholderEmail": "Deine E-Mail",
+    "placeholderMessage": "Deine Nachricht",
+    "privacyTextBeforeLink": "Ich habe die ",
+    "privacyLinkText": "Datenschutzerklärung",
+    "privacyTextAfterLink": " gelesen und stimme der Verarbeitung meiner Daten zu.",
+    "sendMessage": "Nachricht senden",
+    "mobileText": "Sag Hallo :)"
+  },
+  "footer": {
+    "imprint": "Impressum"
   }
 }
+

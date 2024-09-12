@@ -1,6 +1,7 @@
-import { Component, inject, ElementRef, ViewChildren, QueryList, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, inject, ElementRef, ViewChildren, QueryList, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { PortfolioDataService } from '../../services/portfoliodata.service';
+import { TranslationService } from '../../services/translation.service'; // TranslationService importieren
 
 @Component({
   selector: 'app-projects',
@@ -9,23 +10,42 @@ import { PortfolioDataService } from '../../services/portfoliodata.service';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
-export class ProjectsComponent implements AfterViewInit {
+export class ProjectsComponent implements AfterViewInit, OnInit {
 
   portfolioData = inject(PortfolioDataService);
   projects = this.portfolioData.projects;
 
+  // Variablen für Übersetzungen
+  headlineDescription: string = '';
+
   @ViewChildren('projectCard') projectCards!: QueryList<ElementRef>;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, private translationService: TranslationService) {}
+
+  ngOnInit(): void {
+    // Initial die Übersetzungen laden
+    this.updateTranslations();
+
+    // Übersetzungen aktualisieren bei Sprachwechsel
+    this.translationService.currentLanguage$.subscribe(() => {
+      this.updateTranslations();
+    });
+  }
+
+  updateTranslations(): void {
+    this.headlineDescription = this.translationService.translate('projects.headlineDescription');
+
+    // Übersetzte Projektbeschreibungen aktualisieren
+    this.projects.forEach((project, index) => {
+      project.description = this.translationService.translate(`projects.project${index}.description`);
+    });
+  }
 
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
       if ('IntersectionObserver' in window) {
-        // IntersectionObserver supported, set it up
         this.setupIntersectionObserver();
       } else {
-        // IntersectionObserver not supported, use fallback
-        console.warn('IntersectionObserver is not supported in this environment.');
         this.setupFallback();
       }
     }
@@ -33,9 +53,9 @@ export class ProjectsComponent implements AfterViewInit {
 
   private setupIntersectionObserver() {
     const options = {
-      root: null, // viewport
+      root: null,
       rootMargin: '0px',
-      threshold: 0.1 // Trigger when 10% of the element is visible
+      threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -65,7 +85,6 @@ export class ProjectsComponent implements AfterViewInit {
   }
 
   private setupFallback() {
-    // Fallback logic: manually apply classes based on scroll position
     window.addEventListener('scroll', () => {
       this.projectCards.forEach(projectCard => {
         const box = projectCard.nativeElement.querySelector('.box');
@@ -84,7 +103,6 @@ export class ProjectsComponent implements AfterViewInit {
       });
     });
 
-    // Trigger the scroll event to apply initial state
     window.dispatchEvent(new Event('scroll'));
   }
 }

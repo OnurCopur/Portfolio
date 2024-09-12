@@ -12,12 +12,23 @@ import { TranslationService } from '../../services/translation.service';
 export class HeaderComponent {
   menuOpen = false;
   activeLanguage = 'EN';  // Speichert die aktuell aktive Sprache
+  translationKeys = {
+    aboutMe: 'overlay.aboutMe',
+    skills: 'overlay.skills',
+    portfolio: 'overlay.portfolio',
+    sayHi: 'overlay.sayHi',
+    email: 'overlay.email'
+  };
 
   constructor(
     private renderer: Renderer2, 
     private el: ElementRef, 
     private translationService: TranslationService
   ) {}
+
+  getTranslation(key: string): string {
+    return this.translationService.translate(key);
+  }
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;

@@ -3,11 +3,11 @@
     <div class="content">
         <div class="headlines">    
             <div>
-                <h1>Say Hi!</h1>
+                <h1>{{ sayHi }}</h1> <!-- Dynamisch übersetzter Text -->
             </div>
             <div>
-                <h2>Want to discuss a new project?</h2>
-                <h3>Say hello! Let's discuss your ideas and make it happen</h3>
+                <h2>{{ discussProject }}</h2> <!-- Dynamisch übersetzter Text -->
+                <h3>{{ letsDiscuss }}</h3> <!-- Dynamisch übersetzter Text -->
             </div>
         </div>
 
@@ -17,7 +17,7 @@
                     type="text"
                     id="name"
                     name="name"
-                    placeholder="Your name"
+                    placeholder="{{ placeholderName }}" 
                     [(ngModel)]="contactData.name"
                     required
                     #name="ngModel"
@@ -33,7 +33,7 @@
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="Your email"
+                    placeholder="{{ placeholderEmail }}"
                     [(ngModel)]="contactData.email"
                     required
                     pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
@@ -49,7 +49,7 @@
                 <textarea
                     id="message"
                     name="message"
-                    placeholder="Your message"
+                    placeholder="{{ placeholderMessage }}"
                     [(ngModel)]="contactData.message"
                     rows="5"
                     required
@@ -72,7 +72,11 @@
                         required
                         #subscribe="ngModel"
                     />
-                    <span>I've read the <a href="imprint">privacy policy</a> and agree to the processing of my data as outlined</span>
+                    <span>
+                        {{ privacyTextBeforeLink }}
+                        <a href="imprint">{{ privacyLinkText }}</a>
+                        {{ privacyTextAfterLink }}
+                    </span>
                 </label>
                 <div *ngIf="subscribe.invalid && (subscribe.dirty || subscribe.touched)" class="error">
                     You must agree to the privacy policy.
@@ -83,9 +87,9 @@
                 type="submit"
                 [disabled]="!contactForm.form.valid || !subscribe.value"
                 class="submit-btn"
-                >
-                <span class="desktop-text">Send message</span>
-                <span class="mobile-text">Say hello :)</span>
+            >
+                <span class="desktop-text">{{ sendMessageText }}</span> <!-- Dynamischer Text -->
+                <span class="mobile-text">{{ mobileText }}</span> <!-- Dynamischer Text -->
             </button>
 
         </form>

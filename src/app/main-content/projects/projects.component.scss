@@ -56,9 +56,11 @@
 
     .box.animate {
       transform: translate(-20px, -20px);
+      transition: transform 1s ease-in-out;
 
       .box-arrow {
-        transform: translateY(-50%) rotate(270deg);
+        transform: translateY(-50%) rotate(270deg) !important;
+        transition: transform 1s ease-in-out;
       }
     }
   }
@@ -92,6 +94,7 @@
 
         .box-arrow {
           transform: translateY(-50%) rotate(360deg);
+          transition: transform 1s ease-in-out;
         }
       }
     }

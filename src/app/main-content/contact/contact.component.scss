@@ -141,9 +141,9 @@ form {
       }
 
       label a {
-        color: #00BC8F;
-        text-decoration: none;
-        margin: 0 4px; /* Abstand links und rechts des Links */
+        color: #00BC8F !important;
+        text-decoration: none !important;
+        margin: 0 4px !important; /* Abstand links und rechts des Links */
       }
     
       input[type="checkbox"] {
