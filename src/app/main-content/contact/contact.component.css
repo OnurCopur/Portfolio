@@ -1,0 +1,221 @@
+@charset "UTF-8";
+.color {
+  height: 20vh;
+  background: black !important;
+  transform-origin: top left;
+  transform: skewY(5deg);
+  margin-top: 100px;
+}
+
+.contact {
+  background-color: black !important;
+  z-index: 5;
+  position: relative;
+}
+.contact .content {
+  width: 90%;
+  margin: auto;
+}
+
+.headlines {
+  color: white;
+  padding-bottom: 24px;
+}
+.headlines h1 {
+  font-family: Syne;
+  font-size: 78px;
+  font-weight: 800;
+  line-height: 78px;
+  letter-spacing: 0.01em;
+  padding-bottom: 48px;
+}
+.headlines h1:hover {
+  color: #00BC8F;
+}
+.headlines h2 {
+  font-family: Overpass;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38.4px;
+  text-align: center;
+  color: #00BC8F;
+}
+.headlines h3 {
+  font-family: Overpass;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26.4px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  gap: 16px;
+  padding-bottom: 40px;
+}
+form input,
+form textarea {
+  width: 617px;
+  background-color: black;
+  border: 2px solid black;
+  border-bottom: 2px solid white; /* Nur die untere Kante sichtbar */
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  transition: border-color 0.3s ease; /* Sanfter Übergang beim Hover */
+  resize: vertical;
+}
+form input::-moz-placeholder, form textarea::-moz-placeholder {
+  color: white;
+  opacity: 1; /* Stellt sicher, dass die Farbe nicht transparent ist */
+}
+form input::placeholder,
+form textarea::placeholder {
+  color: white;
+  opacity: 1; /* Stellt sicher, dass die Farbe nicht transparent ist */
+}
+form input:hover,
+form textarea:hover,
+form input:focus,
+form textarea:focus {
+  border-color: white; /* Zeige alle Kanten bei Hover oder Focus */
+  outline: none; /* Entferne den standardmäßigen Fokus-Rand */
+}
+form button {
+  padding: 20px 50px;
+  background-color: black;
+  color: #bbbbbb;
+  border: 4px solid #bbbbbb; /* Graue Border für den Button */
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, padding 0.3s ease;
+  margin-top: 10px;
+  border-radius: 4px; /* Optional: Abrunden der Ecken für einen besseren Look */
+  font-size: 22px;
+  position: relative; /* Positionierung für die Textumschaltung */
+}
+form button:disabled {
+  background-color: gray; /* Hintergrundfarbe für deaktiviert */
+  cursor: not-allowed; /* Zeigt ein Verbotssymbol als Cursor an */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Beibehaltung der Übergänge ohne Padding und Schriftgewicht */
+}
+form button:not(:disabled):hover {
+  padding: 20px 70px;
+  font-weight: 500;
+}
+form button .mobile-text {
+  display: none; /* Versteckt den mobilen Text standardmäßig */
+}
+form button .desktop-text {
+  display: inline; /* Zeigt den Desktop-Text an */
+}
+@media (max-width: 600px) {
+  form button .desktop-text {
+    display: none; /* Versteckt den Desktop-Text bei max-width: 600px */
+  }
+  form button .mobile-text {
+    display: inline; /* Zeigt den mobilen Text bei max-width: 600px */
+  }
+}
+form label {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 10px; /* Abstand zum nächsten Element */
+  display: flex;
+  line-height: 1.5; /* Zeilenhöhe für bessere Lesbarkeit */
+}
+form label a {
+  color: #00BC8F !important;
+  text-decoration: none !important;
+  margin: 0 4px !important; /* Abstand links und rechts des Links */
+}
+form input[type=checkbox] {
+  -webkit-appearance: none; /* Entfernt die Standard-Stile der Checkbox */
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px; /* Größe der Checkbox */
+  height: 20px;
+  border: 2px solid white; /* Weiße Kanten */
+  background-color: black; /* Schwarzer Hintergrund */
+  cursor: pointer;
+  position: relative;
+  margin-right: 10px; /* Abstand zwischen Checkbox und Label-Text */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Sanfter Übergang für Hintergrundfarbe und Border-Farbe */
+  margin-right: 10px;
+}
+form input[type=checkbox]:checked::before {
+  content: ""; /* Inhalt des „Häkchen“ */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: white; /* Weißes Häkchen */
+  transform: translate(-50%, -50%); /* Zentriert das Häkchen */
+}
+
+.invalid {
+  border: 1px solid red;
+}
+
+.error {
+  color: red;
+  font-size: 0.875em;
+}
+
+@media (max-width: 750px) {
+  .headlines h1 {
+    font-size: 60px;
+  }
+  form input {
+    width: 500px;
+  }
+  form textarea {
+    width: 500px;
+  }
+  form label {
+    width: 90%;
+    margin: auto;
+  }
+}
+@media (max-width: 600px) {
+  .headlines h1 {
+    font-size: 50px;
+  }
+  form input {
+    width: 400px;
+  }
+  form textarea {
+    width: 400px;
+  }
+  form button {
+    padding: 10px 25px;
+  }
+  form button:not(:disabled):hover {
+    padding: 15px 35px;
+  }
+}
+@media (max-width: 450px) {
+  .headlines h1 {
+    font-size: 40px;
+    padding-bottom: 24px;
+  }
+  .headlines h2 {
+    font-size: 24px;
+  }
+  .headlines h3 {
+    font-size: 18px;
+  }
+  form input {
+    width: 280px;
+  }
+  form textarea {
+    width: 280px;
+  }
+  form label {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=contact.component.css.map */

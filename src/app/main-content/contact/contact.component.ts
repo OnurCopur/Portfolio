@@ -23,7 +23,7 @@ export class ContactComponent implements OnInit {
     message: ''
   };
 
-  mailTest = true;
+  mailTest = false;
 
 
   ngOnInit(): void {
@@ -82,6 +82,7 @@ export class ContactComponent implements OnInit {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
+            console.log('hat funktioniert')
             ngForm.resetForm();
           },
           error: (error) => {

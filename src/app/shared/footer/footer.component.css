@@ -1,0 +1,103 @@
+.footer {
+  font-family: "Syne", sans-serif;
+  color: white;
+  background-color: black;
+  overflow: hidden !important;
+  position: relative;
+  transform-origin: top left;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+  height: 14vh;
+}
+.footer img {
+  width: 100px;
+  padding-bottom: 16px;
+}
+.footer .logo-links {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.footer span {
+  font-family: Overpass;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26.4px;
+  text-align: left;
+}
+
+.links-ln {
+  display: flex;
+  flex-direction: column;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+.links img {
+  width: 40px;
+  transition: transform 0.2s ease-in-out;
+}
+.links img:hover {
+  transform: translateY(-10px);
+}
+
+.logo-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.logo-name a {
+  cursor: pointer;
+}
+
+.imprint {
+  text-decoration: none;
+  color: white;
+}
+
+/* Media query to adjust span font-size and link gap for small screens */
+@media (max-width: 500px) {
+  .footer span {
+    font-size: 18px;
+  }
+  .links {
+    gap: 10px;
+  }
+}
+/* Media query for max-width: 400px to stack elements vertically */
+@media (max-width: 400px) {
+  .footer {
+    flex-direction: column;
+    height: auto;
+    padding-top: 16px;
+  }
+  .logo-links {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .links-ln {
+    order: 1; /* First the links */
+    flex-direction: column; /* Stack the links vertically */
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-name {
+    align-items: center;
+  }
+  .links a[href^=mailto] {
+    order: 3; /* Then the email address */
+    display: block;
+    text-align: center;
+  }
+  .imprint {
+    order: 4; /* Lastly, the Legal notice */
+    text-align: center;
+    display: block;
+  }
+}/*# sourceMappingURL=footer.component.css.map */

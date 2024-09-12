@@ -1,0 +1,149 @@
+@charset "UTF-8";
+.landing-page {
+  background-color: #fffcf3 !important;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  height: 100vh;
+  padding-top: 8vh;
+  width: 90%;
+  justify-content: center; /* Gilt für alle Viewports, daher kann es nach oben verschoben werden */
+  margin-bottom: 100px;
+}
+
+h1 {
+  font-size: 128px;
+  text-align: center;
+  font-family: Syne;
+  font-weight: 800;
+  padding-top: 104px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .horizontal-line {
+  border-top: 3px solid black;
+  width: 42%;
+}
+.container .name {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 48px;
+  letter-spacing: -0.025em;
+  text-align: center;
+  color: #00BC8F;
+  width: 364px;
+}
+
+.mail-scroll {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+.mail-scroll .mail {
+  font-size: 22px;
+  transform: rotate(-90deg);
+}
+.mail-scroll .scroll {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  font-size: 22px;
+  height: 230px;
+  justify-content: space-between;
+}
+.mail-scroll .scroll img {
+  animation: scrollAnimation 1.2s linear infinite;
+}
+
+@keyframes scrollAnimation {
+  0% {
+    transform: translateY(-100px);
+    opacity: 1;
+  }
+  70% {
+    transform: translateY(80px);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+/* Responsive styles */
+@media (max-width: 1150px) {
+  .landing-page {
+    margin-bottom: 0;
+  }
+  h1 {
+    font-size: 96px;
+  }
+  .container .horizontal-line {
+    width: 52%;
+  }
+  .container .name {
+    font-size: 36px;
+    width: 250px;
+  }
+}
+@media (max-width: 860px) {
+  h1 {
+    font-size: 72px;
+  }
+  .container .name {
+    font-size: 27px;
+  }
+}
+@media (max-width: 650px) {
+  .landing-page {
+    height: 80% !important;
+  }
+  h1 {
+    font-size: 58px;
+  }
+  .container .name {
+    font-size: 22px;
+    width: 150px;
+  }
+  img {
+    height: 70px;
+  }
+}
+@media (max-width: 540px) {
+  h1 {
+    font-size: 50px;
+  }
+}
+@media (max-width: 470px) {
+  h1 {
+    font-size: 45px;
+  }
+  .mail-scroll .mail {
+    font-size: 18px;
+  }
+  .mail-scroll .scroll {
+    height: 200px;
+  }
+  .mail-scroll .scroll p {
+    font-size: 18px;
+  }
+}
+@media (max-width: 420px) {
+  h1 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 370px) {
+  h1 {
+    font-size: 34px;
+  }
+}/*# sourceMappingURL=landing-page.component.css.map */

@@ -1,0 +1,61 @@
+.main {
+  position: relative;
+  min-height: 100vh;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding-top: 150px;
+  padding-bottom: 32px;
+}
+
+.legaltext {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 110px 100px;
+  flex-grow: 1;
+}
+
+a {
+  color: #00BC8F;
+}
+
+h1, h2, h3 {
+  color: #00BC8F;
+}
+
+h1 {
+  margin: 20px 0px;
+}
+
+h2 {
+  margin: 16px 0px;
+}
+
+h3 {
+  margin: 10px 0px;
+}
+
+@media only screen and (max-width: 768px) {
+  .legaltext {
+    padding: 110px 50px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .legaltext {
+    padding: 110px 25px;
+  }
+  h1 {
+    font-size: 26px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+}/*# sourceMappingURL=imprint.component.css.map */

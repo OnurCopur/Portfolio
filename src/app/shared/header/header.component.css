@@ -1,0 +1,244 @@
+@charset "UTF-8";
+/* Header styles */
+.header {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 110px;
+  box-sizing: border-box;
+  background-color: #FFFCF3;
+}
+.header .header-content {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 37px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}
+.header .profile-img {
+  width: 150px;
+}
+.header .links-container {
+  display: flex;
+  align-items: center;
+  /* When the menu is open, show the close icon and hide the burger icon */
+  /* When the menu is closed, show the burger icon and hide the close icon */
+}
+.header .links-container .language-switcher {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.header .links-container .language-switcher a {
+  color: #000000;
+  margin: 0 5px;
+  text-decoration: none;
+  font-size: 23px;
+}
+.header .links-container .language-switcher a:hover {
+  text-decoration: none;
+}
+.header .links-container .language-switcher a.active {
+  color: #00BC8F;
+}
+.header .links-container .menu-icon {
+  font-size: 40px; /* Increase the size of the icons */
+  cursor: pointer;
+  display: block;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none; /* Prevent text selection on click */
+  transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+}
+.header .links-container .menu-icon:hover {
+  transform: scale(1.05);
+  transition: ease-in-out 300ms;
+}
+.header .links-container .menu-icon span {
+  display: block;
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out, font-size 0.3s ease-in-out;
+}
+.header .links-container .menu-icon .close-icon {
+  transform: rotate(0deg); /* Default no rotation for the X icon */
+}
+.header .links-container .menu-icon .burger-icon {
+  transform: rotate(0deg); /* Default no rotation for the burger icon */
+}
+.header .links-container .menu-icon .close-icon,
+.header .links-container .menu-icon .burger-icon {
+  display: none;
+}
+.header .links-container .menu-icon span {
+  font-size: 50px;
+}
+.header .links-container .menu-icon.open .close-icon {
+  display: block;
+  transform: rotate(90deg); /* Rotate the X icon when menu is open */
+}
+.header .links-container .menu-icon.open .burger-icon {
+  display: none;
+}
+.header .links-container .menu-icon:not(.open) .burger-icon {
+  display: block;
+}
+.header .links-container .menu-icon:not(.open) .close-icon {
+  display: none;
+}
+
+/* Overlay styles */
+.overlay {
+  position: fixed;
+  top: 110px; /* Just below the header */
+  left: 0;
+  width: 100%;
+  height: calc(100% - 110px); /* Full screen height minus header */
+  background-color: #FFFCF3;
+  display: none; /* Initially hidden */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  transition: all 0.3s ease-in-out;
+}
+.overlay.open {
+  display: flex; /* Show when menuOpen is true */
+}
+
+.overlay-content {
+  display: flex;
+  flex-direction: column;
+}
+.overlay-content a {
+  position: relative; /* Referenzpunkt für Pseudo-Elemente */
+  color: black;
+  margin: 20px 0;
+  text-decoration: none;
+  font-size: 80px;
+  font-family: "Syne";
+  font-weight: 700;
+  /* Vertikaler Strich */
+  /* Unterstrich */
+  /* Hover-Zustand */
+}
+.overlay-content a::before {
+  content: ""; /* Inhalt des Pseudo-Elements */
+  position: absolute;
+  bottom: 0; /* Position am unteren Rand des Links */
+  left: -10%; /* Leicht nach links versetzt */
+  width: 5px; /* Breite des vertikalen Strichs */
+  height: 20px; /* Höhe des vertikalen Strichs */
+  background-color: black; /* Farbe des Strichs */
+  transition: opacity 0.3s ease, left 0.3s ease; /* Übergangseffekte */
+  opacity: 1; /* Sichtbar im Normalzustand */
+}
+.overlay-content a::after {
+  content: ""; /* Inhalt des Pseudo-Elements */
+  position: absolute;
+  bottom: 0; /* Position am unteren Rand des Links */
+  left: -10%; /* Anfangs leicht nach links versetzt */
+  width: 20%; /* Anfangsbreite des Unterstrichs */
+  height: 5px; /* Höhe des Unterstrichs */
+  background-color: black; /* Farbe des Unterstrichs */
+  transition: width 0.3s ease, left 0.3s ease; /* Übergangseffekte */
+}
+.overlay-content a:hover::before {
+  opacity: 0; /* Vertikaler Strich wird unsichtbar */
+  left: 0; /* Optional: Verschiebe den Strich zur neuen Position */
+}
+.overlay-content a:hover::after {
+  width: 50%; /* Unterstrich erweitert sich auf volle Breite */
+  left: 50%; /* Unterstrich verschiebt sich unter den Link */
+}
+
+.say-hi {
+  color: white;
+  background: black;
+  transform: skewY(5deg);
+  transform-origin: top left;
+  height: 100%;
+  width: 100%;
+}
+.say-hi > div {
+  transform: skewY(-5deg);
+  transform-origin: top left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  max-width: 1920px;
+  height: 100%;
+  width: 90%;
+}
+
+h4,
+h2 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+h4:hover,
+h2:hover {
+  color: #00BC8F;
+}
+
+h2 {
+  font-family: Syne;
+  font-size: 78px;
+  font-weight: 800;
+  line-height: 45px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.links > a > img {
+  height: 48px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.links > a > img:hover {
+  transform: translateY(-10px);
+}
+
+/* Responsive styles */
+@media (max-width: 500px) {
+  .header .header-content {
+    padding: 20px 0;
+    width: 90%;
+  }
+  .header .profile-img {
+    width: 100px; /* Reduce logo size */
+  }
+  .header .links-container .language-switcher {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .header .links-container .language-switcher a {
+    font-size: 18px; /* Reduce font size of language switcher links */
+  }
+  .header .links-container .menu-icon {
+    font-size: 30px; /* Reduce menu icon size */
+  }
+  .overlay {
+    height: 100%; /* Adjust height if necessary */
+  }
+  .overlay-content {
+    height: 100% !important;
+    justify-content: center;
+  }
+  .overlay-content a {
+    font-size: 50px; /* Reduce font size in overlay */
+  }
+  .say-hi h2 {
+    font-size: 60px; /* Reduce font size of h2 in say-hi section */
+  }
+  .say-hi .container .links {
+    display: flex;
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=header.component.css.map */
