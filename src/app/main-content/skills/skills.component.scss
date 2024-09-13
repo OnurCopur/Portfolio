@@ -60,9 +60,9 @@
         }
 
         @media (max-width: 435px) {
-          top: -35px;
-          width: 350px;
-          font-size: 45px;
+          top: -30px;
+          width: 320px;
+          font-size: 40px;
         }
 
         @media (max-width: 420px) {
@@ -202,11 +202,11 @@
     top: -130px; /* Adjust to position above the image */
     left: 0;
     width: 200px;
-    height: 120px;
+    height: 130px;
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 24px;
-    padding: 12px;
+    padding: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     z-index: 10;
@@ -281,7 +281,7 @@
 
 @media (max-width:750px ) {
   .skills-container {
-    height: 70vh;
+    height: 80vh;
     padding-top: 0;
 
     .learn {

@@ -42,7 +42,7 @@ h1 {
 .mail-scroll {
     display: flex;
     justify-content: space-between;
-    padding-top: 50px;
+    padding-top: 100px;
 
     .mail {
         font-size: 22px;
@@ -117,9 +117,9 @@ h1 {
 }
 
 @media (max-width: 650px) {
-    .landing-page {
+    /*.landing-page {
         height: 80% !important;
-    }
+    }*/
 
     h1 {
         font-size: 58px;

@@ -11,7 +11,7 @@ import { TranslationService } from '../../services/translation.service';
 })
 export class HeaderComponent {
   menuOpen = false;
-  activeLanguage = 'EN';  // Speichert die aktuell aktive Sprache
+  activeLanguage = 'DE';  // Speichert die aktuell aktive Sprache
   translationKeys = {
     aboutMe: 'overlay.aboutMe',
     skills: 'overlay.skills',

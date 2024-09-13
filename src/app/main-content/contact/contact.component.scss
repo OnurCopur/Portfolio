@@ -138,6 +138,7 @@ form {
         margin-bottom: 10px; /* Abstand zum nächsten Element */
         display: flex;
         line-height: 1.5; /* Zeilenhöhe für bessere Lesbarkeit */
+        align-items: center;
       }
 
       label a {
@@ -156,9 +157,9 @@ form {
         background-color: black; /* Schwarzer Hintergrund */
         cursor: pointer;
         position: relative;
-        margin-right: 10px; /* Abstand zwischen Checkbox und Label-Text */
         transition: background-color 0.3s ease, border-color 0.3s ease; /* Sanfter Übergang für Hintergrundfarbe und Border-Farbe */
         margin-right: 10px;
+        margin-top: 3px;
       }
 
       input[type="checkbox"]:checked::before {
@@ -243,6 +244,20 @@ form {
       }
     }
 
+    form {
+      input {
+        width: 350px;
+      }
+      textarea {
+        width:350px;
+      }
+      label {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
     form {
       input {
         width: 280px;

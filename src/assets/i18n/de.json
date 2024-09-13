@@ -7,19 +7,19 @@
     "email": "onurcopur@outlook.de"
   },
   "landing-page": {
-    "title": "Frontend Entwickler",
+    "title": "Frontend Developer",
     "name": "Onur Copur",
-    "scroll": "Scroll runter"
+    "scroll": "Scroll<br>runter"
   },
   "about-me": {
     "headline": "Über mich",
-    "text": "Ich bin ein Frontend-Entwickler aus München, Deutschland. Ich helfe Designern und Unternehmen, ihre Ideen in die Realität umzusetzen. Kreativität und logisches Denken sind Fähigkeiten, die ich entwickelt habe, um Ideen in Qualitätsprodukte zu verwandeln. <br><br> Wenn Sie denken, dass ich gut zu Ihren Projekten passen würde, kontaktieren Sie mich!",
+    "text": "Ich bin ein Frontend-Entwickler aus München. Ich helfe Designern und Unternehmen, ihre Ideen in die Realität umzusetzen. Kreativität und logisches Denken sind Fähigkeiten, die ich entwickelt habe, um Ideen in Qualitätsprodukte zu verwandeln. <br><br> Wenn Sie denken, dass ich gut zu Ihren Projekten passen würde, kontaktieren Sie mich!",
     "based-in": "Based in München",
-    "remote-work": "Offen für Remote- und Vor-Ort-Arbeit",
+    "remote-work": "Offen für Remote-Arbeit",
     "button": "Let's talk"
   },
   "skills": {
-    "title": "Meine Skills",
+    "title": "Skills",
     "special-interest": "Ich habe Interesse daran meine Skills zu erweitern",
     "let-me-know": "Falls etwas fehlt,",
      "let-me-know-link": "lass es mich wissen",
@@ -38,7 +38,7 @@
     }
   },
   "contact": {
-    "sayHi": "Hi!",
+    "sayHi": "Kontakt",
     "discussProject": "Möchtest du ein neues Projekt besprechen?",
     "letsDiscuss": "Lass uns deine Ideen besprechen und sie umsetzen.",
     "placeholderName": "Dein Name",

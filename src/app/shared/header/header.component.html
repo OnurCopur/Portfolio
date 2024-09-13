@@ -8,11 +8,11 @@
         <div class="links-container">
             <div class="language-switcher">
               <a href="#" 
-              [class.active]="activeLanguage === 'EN'" 
-              (click)="switchLanguage('EN', $event)">EN</a> | 
-           <a href="#" 
               [class.active]="activeLanguage === 'DE'" 
-              (click)="switchLanguage('DE', $event)">DE</a>
+              (click)="switchLanguage('DE', $event)">DE</a> | 
+           <a href="#" 
+              [class.active]="activeLanguage === 'EN'" 
+              (click)="switchLanguage('EN', $event)">EN</a>
            
             </div>
             <div class="menu-icon" (click)="toggleMenu()">

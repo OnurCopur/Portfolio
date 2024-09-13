@@ -8,12 +8,12 @@ import { Observable, BehaviorSubject } from 'rxjs';
 export class TranslationService {
 
   private translations: any = {};  // Hier werden die Übersetzungen gespeichert
-  private currentLanguage = new BehaviorSubject<string>('EN');  // Aktuelle Sprache (default: Englisch)
+  private currentLanguage = new BehaviorSubject<string>('DE');  // Aktuelle Sprache (default: Englisch)
   currentLanguage$ = this.currentLanguage.asObservable();  // Observable für Sprache
 
   constructor(private http: HttpClient) {
     // Standardmäßig Englisch laden
-    this.switchLanguage('EN');
+    this.switchLanguage('DE');
   }
 
   // Funktion zum Laden der Sprachdateien
