@@ -50,9 +50,17 @@
     "privacyLinkText": "privacy policy",
     "privacyTextAfterLink": " and agree to the processing of my data as outlined",
     "sendMessage": "Send message",
-    "mobileText": "Say hello :)"
+    "mobileText": "Say hello :)",
+    "nameRequiredError": "Name is required.",
+    "emailRequiredError": "Email is required.",
+    "emailInvalidError": "Please enter a valid email address.",
+    "messageRequiredError": "Message is required.",
+    "privacyPolicyError": "You must agree to the privacy policy."
   },
   "footer": {
     "imprint": "Legal notice"
-  }
+  },
+    "notification": {
+      "messageSuccess": "Message sent successfully!"
+    }
 }

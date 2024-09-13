@@ -1,4 +1,4 @@
-import { Component, Renderer2, ElementRef } from '@angular/core';
+import { Component, Renderer2, ElementRef, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '../../services/translation.service';
 
@@ -9,9 +9,9 @@ import { TranslationService } from '../../services/translation.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   menuOpen = false;
-  activeLanguage = 'DE';  // Speichert die aktuell aktive Sprache
+  activeLanguage = 'DE';  // Standardmäßig Deutsch, falls nichts im localStorage gefunden wird
   translationKeys = {
     aboutMe: 'overlay.aboutMe',
     skills: 'overlay.skills',
@@ -26,6 +26,19 @@ export class HeaderComponent {
     private translationService: TranslationService
   ) {}
 
+  ngOnInit() {
+    if (typeof window !== 'undefined' && typeof window.localStorage !== 'undefined') {
+      // Überprüfen, ob eine Sprache im localStorage gespeichert ist
+      const savedLanguage = localStorage.getItem('selectedLanguage');
+      if (savedLanguage) {
+        this.activeLanguage = savedLanguage;
+      }
+    }
+  
+    this.translationService.switchLanguage(this.activeLanguage);
+  }
+  
+  
   getTranslation(key: string): string {
     return this.translationService.translate(key);
   }
@@ -64,5 +77,6 @@ export class HeaderComponent {
     event.preventDefault(); // Verhindert das Springen nach oben
     this.activeLanguage = language;
     this.translationService.switchLanguage(language);  // Sprachwechsel ausführen
+    localStorage.setItem('selectedLanguage', language);  // Sprache im localStorage speichern
   }
 }

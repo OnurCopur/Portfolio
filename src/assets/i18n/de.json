@@ -48,10 +48,18 @@
     "privacyLinkText": "Datenschutzerklärung",
     "privacyTextAfterLink": " gelesen und stimme der Verarbeitung meiner Daten zu.",
     "sendMessage": "Nachricht senden",
-    "mobileText": "Sag Hallo :)"
+    "mobileText": "Sag Hallo :)",
+    "nameRequiredError": "Name ist erforderlich.",
+    "emailRequiredError": "E-Mail ist erforderlich.",
+    "emailInvalidError": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "messageRequiredError": "Nachricht ist erforderlich.",
+    "privacyPolicyError": "Sie müssen der Datenschutzerklärung zustimmen."
   },
   "footer": {
     "imprint": "Impressum"
+  },
+  "notification": {
+    "messageSuccess": "Nachricht erfolgreich gesendet!"
   }
 }
 

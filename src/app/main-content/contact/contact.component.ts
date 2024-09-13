@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { TranslationService } from '../../services/translation.service'; // TranslationService importieren
 
-
 @Component({
   selector: 'app-contact',
   standalone: true,
@@ -25,18 +24,11 @@ export class ContactComponent implements OnInit {
 
   mailTest = false;
 
+  // Variablen für die Benachrichtigung
+  showNotification = false;
+  successMessage: string = '';
 
-  ngOnInit(): void {
-    // Initial die Übersetzungen laden
-    this.updateTranslations();
-
-    // Aktualisiere Übersetzungen, wenn die Sprache gewechselt wird
-    this.translationService.currentLanguage$.subscribe(() => {
-      this.updateTranslations();
-    });
-  }
-
-
+  // Dynamische Texte für die Übersetzungen
   sayHi: string = '';
   discussProject: string = '';
   letsDiscuss: string = '';
@@ -49,7 +41,24 @@ export class ContactComponent implements OnInit {
   sendMessageText: string = '';
   mobileText: string = '';
 
+  // Fehlertexte für Validierungen
+  nameRequiredError: string = '';
+  emailRequiredError: string = '';
+  emailInvalidError: string = '';
+  messageRequiredError: string = '';
+  privacyPolicyError: string = '';
 
+  ngOnInit(): void {
+    // Initial die Übersetzungen laden
+    this.updateTranslations();
+
+    // Aktualisiere Übersetzungen, wenn die Sprache gewechselt wird
+    this.translationService.currentLanguage$.subscribe(() => {
+      this.updateTranslations();
+    });
+  }
+
+  // Übersetzungen laden und die Texte entsprechend setzen
   updateTranslations(): void {
     this.sayHi = this.translationService.translate('contact.sayHi');
     this.discussProject = this.translationService.translate('contact.discussProject');
@@ -62,9 +71,18 @@ export class ContactComponent implements OnInit {
     this.privacyTextAfterLink = this.translationService.translate('contact.privacyTextAfterLink');
     this.sendMessageText = this.translationService.translate('contact.sendMessage');
     this.mobileText = this.translationService.translate('contact.mobileText');
+
+    this.nameRequiredError = this.translationService.translate('contact.nameRequiredError');
+    this.emailRequiredError = this.translationService.translate('contact.emailRequiredError');
+    this.emailInvalidError = this.translationService.translate('contact.emailInvalidError');
+    this.messageRequiredError = this.translationService.translate('contact.messageRequiredError');
+    this.privacyPolicyError = this.translationService.translate('contact.privacyPolicyError');
+    
+    // Erfolgsmeldung für die Benachrichtigung übersetzen
+    this.successMessage = this.translationService.translate('notification.messageSuccess');
   }
 
-  
+  // Konfiguration für die Post-Anfrage
   post = {
     endPoint: 'https://onur-copur.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
@@ -76,14 +94,14 @@ export class ContactComponent implements OnInit {
     },
   };
 
-
+  // Formular absenden und Benachrichtigung anzeigen
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
       this.http.post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-            console.log('hat funktioniert')
             ngForm.resetForm();
+            this.displayNotification(); // Benachrichtigung anzeigen
           },
           error: (error) => {
             console.error(error);
@@ -93,5 +111,13 @@ export class ContactComponent implements OnInit {
     } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
       ngForm.resetForm();
     }
+  }
+
+  // Benachrichtigung anzeigen und nach 3 Sekunden wieder ausblenden
+  displayNotification(): void {
+    this.showNotification = true;
+    setTimeout(() => {
+      this.showNotification = false;
+    }, 3000); // Nach 3 Sekunden wieder ausblenden
   }
 }

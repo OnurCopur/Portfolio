@@ -275,7 +275,7 @@
 @media (max-width:918px ) {
   .skills-list {
    padding: 0 !important;
-   //gap: 50px;
+   gap: 50px;
   }
 }
 
@@ -313,8 +313,10 @@
 
 @media (max-width:700px ) {
   .skills-list {
-   padding: 0 !important;
-   //gap: 50px;
+   //padding: 28px !important;
+   padding-left: 30px !important;
+   padding-right: 30px !important;
+   gap: 60px;
 
    img {
     height: 60px;
@@ -323,10 +325,25 @@
   }
 }
 
+@media (max-width:624px ) {
+  .skills-list {
+   padding-left: 30px !important;
+   padding-right: 30px !important;
+   gap: 60px;
+
+   img {
+    height: 55px;
+    width: 55px;
+   }
+  }
+}
+
 @media (max-width:550px ) {
   .skills-list {
-   padding: 0 !important;
-   //gap: 50px;
+   //spadding: 0 !important;
+   padding-left: 10px !important;
+   padding-right: 10px !important;
+   gap: 21px;
 
    img {
     height: 55px;
@@ -338,7 +355,7 @@
 @media (max-width:446px ) {
   .skills-list {
    padding: 20px !important;
-   gap: 35px;
+   gap: 36px;
 
    img {
     height: 55px;
@@ -361,7 +378,7 @@
 
 @media (max-width:394px ) {
   .skills-list {
-   padding: 20px !important;
+   padding: 19px !important;
    gap: 17px;
 
    img {
@@ -373,7 +390,7 @@
 
 @media (max-width:373px ) {
   .skills-list {
-   padding: 20px !important;
+   padding: 19px !important;
    gap: 14px;
 
    img {

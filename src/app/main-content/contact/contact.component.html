@@ -24,7 +24,7 @@
                     [ngClass]="{'invalid': name.invalid && (name.dirty || name.touched)}"
                 />
                 <div *ngIf="name.invalid && (name.dirty || name.touched)" class="error">
-                    Name is required.
+                    {{ nameRequiredError }}
                 </div>
             </div>
         
@@ -41,7 +41,8 @@
                     [ngClass]="{'invalid': email.invalid && (email.dirty || email.touched)}"
                 />
                 <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
-                    Please enter a valid email address.
+                    <span *ngIf="email.errors?.['required']">{{ emailRequiredError }}</span>
+                    <span *ngIf="email.errors?.['pattern']">{{ emailInvalidError }}</span>
                 </div>
             </div>
         
@@ -57,7 +58,7 @@
                     [ngClass]="{'invalid': message.invalid && (message.dirty || message.touched)}"
                 ></textarea>
                 <div *ngIf="message.invalid && (message.dirty || message.touched)" class="error">
-                    Message is required.
+                    {{ messageRequiredError }}
                 </div>
             </div>
         
@@ -79,19 +80,27 @@
                     </span>
                 </label>
                 <div *ngIf="subscribe.invalid && (subscribe.dirty || subscribe.touched)" class="error">
-                    You must agree to the privacy policy.
+                    {{ privacyPolicyError }}
                 </div>
             </div>
         
             <button
                 type="submit"
                 [disabled]="!contactForm.form.valid || !subscribe.value"
-                class="submit-btn"
-            >
+                class="submit-btn">
                 <span class="desktop-text">{{ sendMessageText }}</span> <!-- Dynamischer Text -->
                 <span class="mobile-text">{{ mobileText }}</span> <!-- Dynamischer Text -->
             </button>
-
         </form>
+        <div>
+            <a class="scrollup" href="#">
+                <img src="assets/img/scrollup.png">
+            </a>
+        </div>
     </div>
+</div>
+
+<!-- Benachrichtigungs-Element, das nach erfolgreichem Versand angezeigt wird -->
+<div class="notification" *ngIf="showNotification">
+  {{ successMessage }}
 </div>
