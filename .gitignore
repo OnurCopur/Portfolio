@@ -42,4 +42,4 @@ testem.log
 Thumbs.db
 
 # Assets
-src\assets\img
+src/assets/img
